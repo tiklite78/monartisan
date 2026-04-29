@@ -63,9 +63,7 @@ const INIT_RDV = [
   { id:2, artisanId:1, clientId:102, titre:"Travaux tableau électrique", date:"2026-05-03", heure:"08:30", duree:480, statut:"confirmé", adresse:"12 rue de la Paix, Paris 15e" },
 ];
 
-const INIT_PAIEMENTS = [
-  { id:1, devisId:1, clientId:102, artisanId:1, montant:1200, statut:"payé", date:"12 avr 2026", methode:"Carte bancaire" },
-];
+
 
 const DEMO_USERS = [
   { id:1, type:"artisan", prenom:"Jean-Pierre", nom:"Morel", email:"jean@demo.fr", password:"demo123", metier:"electricien", ville:"Paris", tarif:"65€/h", certifie:true, dispo:true, note:4.9, avis:87, photo:"JM", couleur:"#F59E0B", desc:"Électricien certifié RGE avec 15 ans d'expérience." },
@@ -1114,11 +1112,9 @@ export default function App() {
     setDevis(d=>d.map(dev=>dev.id===devisId?{ ...dev, statut:"refusé" }:dev));
   }
 
-  const needLogin = (p) => {
-    if(!user) { go("login"); return true; } return false;
-  };
+  
 
-  return (
+
     <div style={{ fontFamily:"'Outfit','Segoe UI',sans-serif" }}>
       <Nav page={page} setPage={p=>{ if(["messages","dashboard","mes-devis","calendrier"].includes(p)&&!user){ go("login"); return; } go(p); }} user={user} onLogout={()=>{ setUser(null); go("home"); }} unread={unread} />
 
