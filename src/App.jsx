@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-
+import { useState } from "react";
 // ─── DATA ────────────────────────────────────────────────────────────────────
 const METIERS = [
   { id:"tous", label:"Tous les métiers", emoji:"🏗️" },
@@ -414,7 +413,7 @@ function Detail({ artisan, onBack, user, reviews, onAddReview, onContact, onDema
                 <div style={{ color:"#A8A29E", fontSize:12, marginTop:4 }}>{artisanReviews.length} avis</div>
               </div>
               <div style={{ flex:1 }}>
-                {[5,4,3,2,1].map(n=>{
+               {[5,4,3,2,1].map(n=>{
                   const count=artisanReviews.filter(r=>Math.round(r.note)===n).length;
                   const pct=artisanReviews.length?(count/artisanReviews.length)*100:0;
                   return (
