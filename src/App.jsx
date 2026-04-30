@@ -1108,13 +1108,13 @@ export default function App() {
   function handleAccepter(devisId) {
     setDevis(d=>d.map(dev=>dev.id===devisId?{ ...dev, statut:"accepté" }:dev));
   }
-  function handleRefuser(devisId) {
     setDevis(d=>d.map(dev=>dev.id===devisId?{ ...dev, statut:"refusé" }:dev));
   }
 
   
 
 
+    return (
     <div style={{ fontFamily:"'Outfit','Segoe UI',sans-serif" }}>
       <Nav page={page} setPage={p=>{ if(["messages","dashboard","mes-devis","calendrier"].includes(p)&&!user){ go("login"); return; } go(p); }} user={user} onLogout={()=>{ setUser(null); go("home"); }} unread={unread} />
 
