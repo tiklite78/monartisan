@@ -1053,7 +1053,7 @@ function Login({ users, onLogin, setPage }) {
 
 // ─── APP ─────────────────────────────────────────────────────────────────────
 export default function App() {
-  const [page, setPage] = useState("home");
+(default function App(){})
   const [user, setUser] = useState(null);
   const [users, setUsers] = useState(DEMO_USERS);
   const [artisans, setArtisans] = useState(INIT_ARTISANS);
