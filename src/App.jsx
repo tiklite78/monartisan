@@ -1108,7 +1108,8 @@ export default function App() {
   function handleAccepter(devisId) {
     setDevis(d=>d.map(dev=>dev.id===devisId?{ ...dev, statut:"accepté" }:dev));
   }
-    setDevis(d=>d.map(dev=>dev.id===devisId?{ ...dev, statut:"refusé" }:dev));
+ function handleRefuser(devisId)] {
+  setDevis(d=>d.map(dev=>dev.id===devisId?{ ...dev, statut:"refusé" }:dev));
   }
 
   
